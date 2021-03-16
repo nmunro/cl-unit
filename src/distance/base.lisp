@@ -20,10 +20,5 @@
       (defun ,(intern-function-name name) (val)
         (make-instance (quote ,name) :val val)))))
 
-#|
-(macroexpand-1 '(define-distance meter nil))
-(macroexpand-1 '(define-distance kilometer 'meter))
-|#
-
 (defgeneric convert (obj1 target)
   (:documentation "Converts an object of one type, to another"))
