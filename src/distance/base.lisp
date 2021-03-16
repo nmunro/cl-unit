@@ -1,6 +1,7 @@
 (defpackage cl-unit.distance.base
   (:use :cl :cl-unit.util)
-  (:export #:define-distance))
+  (:export #:define-distance
+           #:convert))
 (in-package :cl-unit.distance.base)
 
 (defclass distance ()
