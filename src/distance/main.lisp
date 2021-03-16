@@ -22,3 +22,8 @@
 
 (let ((km (make-kilometer 5)))
   (convert km 'meter))
+
+#|
+(macroexpand-1 '(define-distance meter nil))
+(macroexpand-1 '(define-distance kilometer 'meter))
+|#
