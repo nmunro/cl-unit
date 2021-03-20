@@ -1,10 +1,7 @@
 (defpackage cl-unit.distance.kilometer
-  (:use :cl :cl-unit.distance.base)
+  (:use :cl)
   (:export #:kilometer
            #:make-kilometer))
 (in-package :cl-unit.distance.kilometer)
 
-(define-distance kilometer)
-
-(defmethod convert ((obj1 kilometer) target)
-  0)
+(cl-unit.distance.base:define-distance kilometer)
