@@ -2,7 +2,12 @@
   (:use :cl :cl-unit.util)
   (:export #:define-distance
            #:val
-           #:base))
+           #:base
+           #:convert
+           #:add-distance
+           #:multiply-distance
+           #:subtract-distance
+           #:divide-distance))
 (in-package :cl-unit.distance.base)
 
 (defclass distance ()
@@ -22,3 +27,18 @@
 
       (defun ,(intern-function-name name) (val)
         (make-instance (quote ,name) :val val)))))
+
+(defgeneric convert (obj1 target)
+  (:documentation "Converts an object of one type, to another"))
+
+(defgeneric add-distance (unit1 unit2)
+  (:documentation "Adds two units"))
+
+(defgeneric multiply-distance (unit1 unit2)
+  (:documentation "Multiplies two units"))
+
+(defgeneric subtract-distance (unit1 unit2)
+  (:documentation "Subtract two units"))
+
+(defgeneric divide-distance (unit1 unit2)
+  (:documentation "Divide two units"))
