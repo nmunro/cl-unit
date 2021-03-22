@@ -2,6 +2,7 @@
   (:use :cl
    :cl-unit.distance.base
    :cl-unit.distance.meter
+   :cl-unit.distance.meter-kilometer
    :cl-unit.distance.centimeter
    :cl-unit.distance.kilometer)
   (:shadow "+" "-" "/" "*")
