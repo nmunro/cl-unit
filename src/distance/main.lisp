@@ -2,8 +2,7 @@
   (:use :cl
    :cl-unit.distance.centimeter
    :cl-unit.distance.meter
-   :cl-unit.distance.kilometer
-   :cl-unit.distance.convert)
+   :cl-unit.distance.kilometer)
   (:import-from :cl-unit.distance.base :val)
   (:export #:centimeter
            #:make-centimeter
@@ -11,6 +10,5 @@
            #:make-meter
            #:kilometer
            #:make-kilometer
-           #:val
-           #:convert))
+           #:val))
 (in-package :cl-unit.distance)

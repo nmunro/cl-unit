@@ -7,7 +7,9 @@
            #:add-distance
            #:multiply-distance
            #:subtract-distance
-           #:divide-distance))
+           #:divide-distance
+           #:equate-distance
+           #:equivalent-distance))
 (in-package :cl-unit.distance.base)
 
 (defclass distance ()
@@ -42,3 +44,9 @@
 
 (defgeneric divide-distance (unit1 unit2)
   (:documentation "Divide two units"))
+
+(defgeneric equal-distance (unit1 unit2)
+  (:documentation "Compare if two distances are equal"))
+
+(defgeneric equivalent-distance (unit1 unit2)
+  (:documentation "Compare if two distances are equivalent"))
