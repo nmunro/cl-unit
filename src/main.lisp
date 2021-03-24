@@ -1,24 +1,32 @@
 (defpackage cl-unit
-  (:use :cl :cl-unit.distance)
-  (:shadow "+" "-" "*" "/")
+  (:use :cl)
+  (:shadow "+" "-" "*" "/" "=")
   (:export #:+
            #:-
            #:*
            #:/
+           #:=
+           #:==
            #:convert))
 (in-package :cl-unit)
 
 (defun + (&rest units)
-  (reduce 'cl-unit.distance:add-distance (cdr units) :initial-value (car units)))
+  (reduce 'cl-unit.distance.base:add-distance (cdr units) :initial-value (car units)))
 
 (defun * (&rest units)
-  (reduce 'cl-unit.distance:multiply-distance (cdr units) :initial-value (car units)))
+  (reduce 'cl-unit.distance.base:multiply-distance (cdr units) :initial-value (car units)))
 
 (defun - (&rest units)
-  (reduce 'cl-unit.distance:subtract-distance (cdr units) :initial-value (car units)))
+  (reduce 'cl-unit.distance.base:subtract-distance (cdr units) :initial-value (car units)))
 
 (defun / (&rest units)
-  (reduce 'cl-unit.distance:divide-distance (cdr units) :initial-value (car units)))
+  (reduce 'cl-unit.distance.base:divide-distance (cdr units) :initial-value (car units)))
+
+(defun = (&rest units)
+  (reduce 'cl-unit.distance.equal:equal-distance (cdr units) :initial-value (car units)))
+
+(defun == (&rest units)
+  (reduce 'cl-unit.distance.equivalent:equivalent-distance (cdr units) :initial-value (car units)))
 
 #|
 (let ((meter1 (make-meter 2))

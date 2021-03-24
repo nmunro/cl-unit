@@ -19,6 +19,8 @@
                    (:file "subtract")
                    (:file "multiply")
                    (:file "divide")
+                   (:file "equal")
+                   (:file "equivalent")
                    (:file "main")))
                  (:file "main"))))
   :description ""
