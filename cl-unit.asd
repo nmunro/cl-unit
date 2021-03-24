@@ -5,14 +5,21 @@
   :depends-on ()
   :components ((:module "src"
                 :components
-                ((:file "base")
+                ((:module "utils"
+                  :components
+                  ((:file "utils")))
                  (:module "distance"
                   :components
                   ((:file "base")
+                   (:file "centimeter")
                    (:file "meter")
                    (:file "kilometer")
-                   (:file "meter-kilometer")
-                   (:file "kilometer-meter")))
+                   (:file "convert")
+                   (:file "add")
+                   (:file "subtract")
+                   (:file "multiply")
+                   (:file "divide")
+                   (:file "main")))
                  (:file "main"))))
   :description ""
   :in-order-to ((test-op (test-op "cl-unit/tests"))))
