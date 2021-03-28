@@ -14,7 +14,7 @@
 
 (defclass distance ()
   ((name :initarg :name :initform "" :accessor name)
-   (val :initarg :val :initform 0 :accessor val)))
+   (val  :initarg :val :initform 0 :accessor val)))
 
 (defmethod print-object ((object distance) stream)
   (print-unreadable-object (object stream)
