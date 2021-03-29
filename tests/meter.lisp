@@ -73,6 +73,18 @@
   (testing "should (= 3 (val (+ (make-meter 1) (make-meter 2)))) to be true"
     (ok (cl:= 3 (cl-unit.distance:val (cl-unit:+ (cl-unit.distance:make-meter 1) (cl-unit.distance:make-meter 2)))))))
 
+(deftest test-meter+kilometer-1
+  (testing "should (= 1001 (val (+ (make-meter 1) (make-kilometer 1)))) to be true"
+    (ok (cl:= 1001 (cl-unit.distance:val (cl-unit:+ (cl-unit.distance:make-meter 1) (cl-unit.distance:make-kilometer 1)))))))
+
+(deftest test-meter+centimeter-1
+  (testing "should (= 1.01 (val (+ (make-meter 1) (make-centimeter 1)))) to be true"
+    (ok (cl:= 1.01 (cl-unit.distance:val (cl-unit:+ (cl-unit.distance:make-meter 1) (cl-unit.distance:make-centimeter 1)))))))
+
+(deftest test-meter+centimeter-2
+  (testing "should (= 1.01 (val (+ (make-meter 1) (make-centimeter 1)))) to be true"
+    (ok (cl:= 2.00 (cl-unit.distance:val (cl-unit:+ (cl-unit.distance:make-meter 1) (cl-unit.distance:make-centimeter 100)))))))
+
 (deftest test-meter-1
   (testing "should (= 0 (val (- (make-meter 1) (make-meter 1)))) to be true"
     (ok (cl:= 0 (cl-unit.distance:val (cl-unit:- (cl-unit.distance:make-meter 1) (cl-unit.distance:make-meter 1)))))))
