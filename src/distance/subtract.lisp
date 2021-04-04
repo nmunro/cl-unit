@@ -14,7 +14,7 @@
   (make-meter (- (val unit1) (* 1000 (val unit2)))))
 
 (defmethod subtract-distance ((unit1 meter) (unit2 centimeter))
-  (make-meter (- (val unit1) (val unit2))))
+  (make-meter (- (val unit1) (/ (val unit2) 100))))
 
 (defmethod subtract-distance ((unit1 kilometer) (unit2 kilometer))
   (make-kilometer (- (val unit1) (val unit2))))
