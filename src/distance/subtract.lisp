@@ -29,7 +29,7 @@
   (make-centimeter (- (val unit1) (val unit2))))
 
 (defmethod subtract-distance ((unit1 centimeter) (unit2 meter))
-  (make-centimeter (- (val unit1) (val unit2))))
+  (make-centimeter (- (val unit1) (* (val unit2) 100))))
 
 (defmethod subtract-distance ((unit1 centimeter) (unit2 kilometer))
-  (make-centimeter (- (val unit1) (val unit2))))
+  (make-centimeter (- (val unit1) (* (val unit2) 100000))))
