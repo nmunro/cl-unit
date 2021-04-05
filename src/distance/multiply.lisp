@@ -20,10 +20,10 @@
   (make-kilometer (* (val unit1) (val unit2))))
 
 (defmethod multiply-distance ((unit1 kilometer) (unit2 meter))
-  (make-meter (* (val unit1) (/ (val unit2) 1000))))
+  (make-kilometer (* (val unit1) (/ (val unit2) 1000))))
 
 (defmethod multiply-distance ((unit1 kilometer) (unit2 centimeter))
-  (make-meter (* (val unit1) (/ (val unit2) 100000))))
+  (make-kilometer (* (val unit1) (/ (val unit2) 100000))))
 
 (defmethod multiply-distance ((unit1 centimeter) (unit2 centimeter))
   (make-centimeter (* (val unit1) (val unit2))))
