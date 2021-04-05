@@ -140,3 +140,19 @@
 (deftest test-meter/meter-2
   (testing "should (= 5/2 (val (/ (make-meter 5) (make-meter 2)))) to be true"
     (ok (cl:= 5/2 (cl-unit.distance:val (cl-unit:/ (cl-unit.distance:make-meter 5) (cl-unit.distance:make-meter 2)))))))
+
+(deftest test-meter/kilometer-1
+  (testing "should (= 1/2000 (val (/ (make-meter 1) (make-kilometer 2)))) to be true"
+    (ok (cl:= 1/2000 (cl-unit.distance:val (cl-unit:/ (cl-unit.distance:make-meter 1) (cl-unit.distance:make-kilometer 2)))))))
+
+(deftest test-meter/kilometer-2
+  (testing "should (= 1/1000 (val (/ (make-meter 2) (make-kilometer 2)))) to be true"
+    (ok (cl:= 1/1000 (cl-unit.distance:val (cl-unit:/ (cl-unit.distance:make-meter 2) (cl-unit.distance:make-kilometer 2)))))))
+
+(deftest test-meter/centimeter-1
+  (testing "should (= 1/200 (val (/ (make-meter 1) (make-centimeter 2)))) to be true"
+    (ok (cl:= 1/200 (cl-unit.distance:val (cl-unit:/ (cl-unit.distance:make-meter 1) (cl-unit.distance:make-centimeter 2)))))))
+
+(deftest test-meter/centimeter-2
+  (testing "should (= 1/100 (val (/ (make-meter 2) (make-centimeter 2)))) to be true"
+    (ok (cl:= 1/100 (cl-unit.distance:val (cl-unit:/ (cl-unit.distance:make-meter 2) (cl-unit.distance:make-centimeter 2)))))))
