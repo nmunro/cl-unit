@@ -19,6 +19,10 @@
                    (:file "subtract")
                    (:file "multiply")
                    (:file "divide")
+                   (:file "gt")
+                   (:file "gte")
+                   (:file "lt")
+                   (:file "lte")
                    (:file "equal")
                    (:file "equivalent")
                    (:file "main")))
@@ -33,6 +37,8 @@
                "rove")
   :components ((:module "tests"
                 :components
-                ((:file "main"))))
+                ((:file "centimeter")
+                 (:file "meter")
+                 (:file "kilometer"))))
   :description "Test system for cl-unit"
   :perform (test-op (op c) (symbol-call :rove :run c)))
