@@ -125,6 +125,22 @@
   (testing "should (<= (make-centimeter 1) (make-centimeter 2)) to be true"
     (ok (cl-unit:<= (cl-unit.distance:make-centimeter 1) (cl-unit.distance:make-centimeter 2)))))
 
+(deftest test-centimeter<=meter-1
+  (testing "should (<= (make-centimeter 1) (make-meter 1)) to be true"
+    (ok (cl-unit:<= (cl-unit.distance:make-centimeter 1) (cl-unit.distance:make-meter 1)))))
+
+(deftest test-centimeter<=meter-2
+  (testing "should (<= (make-centimeter 100) (make-meter 1)) to be true"
+    (ok (cl-unit:<= (cl-unit.distance:make-centimeter 100) (cl-unit.distance:make-meter 1)))))
+
+(deftest test-centimeter<=kilometer-1
+  (testing "should (<= (make-centimeter 100000) (make-kilometer 1)) to be true"
+    (ok (cl-unit:<= (cl-unit.distance:make-centimeter 100000) (cl-unit.distance:make-kilometer 1)))))
+
+(deftest test-centimeter<=kilometer-2
+  (testing "should (<= (make-centimeter 100001) (make-kilometer 1)) to be true"
+    (ng (cl-unit:<= (cl-unit.distance:make-centimeter 100001) (cl-unit.distance:make-kilometer 1)))))
+
 (deftest test-centimeter+centimeter-1
   (testing "should (= 2 (val (+ (make-centimeter 1) (make-centimeter 1)))) to be true"
     (ok (cl:= 2 (cl-unit.distance:val (cl-unit:+ (cl-unit.distance:make-centimeter 1) (cl-unit.distance:make-centimeter 1)))))))
