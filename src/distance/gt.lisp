@@ -20,7 +20,7 @@
   (> (val unit1) (val unit2)))
 
 (defmethod gt-distance ((unit1 kilometer) (unit2 meter))
-  (> (* 1000 (val unit1)) (val unit2)))
+  (> (val unit1) (/ (val unit2) 1000)))
 
 (defmethod gt-distance ((unit1 kilometer) (unit2 centimeter))
   (> (val unit1) (/ (val unit2) 100000)))
