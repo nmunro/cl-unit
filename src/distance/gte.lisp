@@ -32,4 +32,4 @@
   (>= (val unit1) (val unit2)))
 
 (defmethod gte-distance ((unit1 centimeter) (unit2 kilometer))
-  (>= (val unit1) (val unit2)))
+  (>= (val unit1) (* (val unit2) 100000)))

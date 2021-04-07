@@ -57,6 +57,22 @@
   (testing "should (>= (make-kilometer 1) (make-kilometer 2)) to be false"
     (ng (cl-unit:>= (cl-unit.distance:make-kilometer 1) (cl-unit.distance:make-kilometer 2)))))
 
+(deftest test-kilometer>=meter-1
+  (testing "should (>= (make-kilometer 1) (make-meter 1)) to be true"
+    (ok (cl-unit:>= (cl-unit.distance:make-kilometer 1) (cl-unit.distance:make-meter 1)))))
+
+(deftest test-kilometer>=meter-2
+  (testing "should (>= (make-kilometer 1) (make-meter 1001)) to be false"
+    (ng (cl-unit:>= (cl-unit.distance:make-kilometer 1) (cl-unit.distance:make-meter 1001)))))
+
+(deftest test-kilometer>=centimeter-1
+  (testing "should (>= (make-kilometer 1) (make-centimeter 2)) to be true"
+    (ok (cl-unit:>= (cl-unit.distance:make-kilometer 1) (cl-unit.distance:make-centimeter 1)))))
+
+(deftest test-kilometer>=centimeter-2
+  (testing "should (>= (make-kilometer 1) (make-centimeter 100001)) to be false"
+    (ng (cl-unit:>= (cl-unit.distance:make-kilometer 1) (cl-unit.distance:make-centimeter 100001)))))
+
 (deftest test-kilometer<kilometer-1
   (testing "should (< (make-meter 1) (make-meter 2)) to be true"
     (ok (cl-unit:< (cl-unit.distance:make-kilometer 1) (cl-unit.distance:make-kilometer 2)))))
