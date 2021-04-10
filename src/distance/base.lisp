@@ -3,7 +3,7 @@
   (:export #:define-distance
            #:val
            #:base
-           #:convert
+           #:convert-distance
            #:add-distance
            #:multiply-distance
            #:subtract-distance
@@ -14,7 +14,7 @@
 
 (defclass distance ()
   ((name :initarg :name :initform "" :accessor name)
-   (val  :initarg :val :initform 0 :accessor val)))
+   (val  :initarg :val :initform 0   :accessor val)))
 
 (defmethod print-object ((object distance) stream)
   (print-unreadable-object (object stream)
@@ -30,7 +30,7 @@
       (defun ,(intern-function-name name) (val)
         (make-instance (quote ,name) :val val)))))
 
-(defgeneric convert (obj1 target)
+(defgeneric convert-distance (obj1 target)
   (:documentation "Converts an object of one type, to another"))
 
 (defgeneric add-distance (unit1 unit2)

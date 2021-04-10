@@ -43,3 +43,6 @@
 
 (defun == (&rest units)
   (reduce 'cl-unit.distance.equivalent:equivalent-distance (cdr units) :initial-value (car units)))
+
+(defun convert (src &key to)
+  (cl-unit.distance.convert:convert-distance src to))
