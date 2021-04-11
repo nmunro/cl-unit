@@ -1,6 +1,6 @@
 (defsystem "cl-unit"
   :version "0.1.0"
-  :author ""
+  :author "NMunro"
   :license ""
   :depends-on ()
   :components ((:module "src"
@@ -31,8 +31,16 @@
   :description ""
   :in-order-to ((test-op (test-op "cl-unit/tests"))))
 
+(defsystem "cl-unit/dev"
+  :author "NMunro"
+  :license ""
+  :components ((:module "dev"
+                :components
+                ((:file "main"))))
+  :description "Dev tools for building cl-unit")
+
 (defsystem "cl-unit/tests"
-  :author ""
+  :author "NMunro"
   :license ""
   :depends-on ("cl-unit"
                "rove")
