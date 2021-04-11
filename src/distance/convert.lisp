@@ -33,6 +33,6 @@
      (make-centimeter (* (val obj1) 100000)))
 
     ((or (eq target :meter) (eq target :m))
-     (make-kilometer (* (val obj1) 1000)))
+     (make-meter (* (val obj1) 1000)))
 
     (t (error "Can't convert ~A to ~A~%" obj1 target))))
