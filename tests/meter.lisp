@@ -232,3 +232,7 @@
 (deftest test-meter-convert-kilometer-3
   (testing "should (= 0.0005 (val (convert (make-meter 1) :to :km))) to be true"
     (ok (cl:= 0.0005 (cl-unit.distance:val (cl-unit:convert (cl-unit.distance:make-meter 0.5) :to :km))))))
+
+(deftest test-meter-convert-meter-1
+  (testing "should (signals (convert (make-meter 1) :to :m)) to be true"
+    (ok (signals (cl-unit:convert (cl-unit.distance:make-meter 1) :to :m)))))
