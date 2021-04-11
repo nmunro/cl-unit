@@ -4,6 +4,7 @@
    :cl-unit.distance.meter
    :cl-unit.distance.kilometer)
   (:import-from :cl-unit.distance.base :val)
+  (:import-from :cl-unit.errors :incompatible-unit)
   (:export #:convert-distance))
 (in-package :cl-unit.distance.convert)
 
@@ -15,7 +16,7 @@
     ((or (eq target :kilometer) (eq target :km))
      (make-kilometer (/ (val obj1) 100000)))
 
-    (t (error "Can't convert ~A to ~A~%" obj1 target))))
+    (t (error 'incompatible-unit :src obj1 :target target))))
 
 (defmethod convert-distance ((obj1 meter) target)
   (cond
@@ -25,7 +26,7 @@
     ((or (eq target :kilometer) (eq target :km))
      (make-kilometer (/ (val obj1) 1000)))
 
-    (t (error "Can't convert ~A to ~A~%" obj1 target))))
+    (t (error 'incompatible-unit :src obj1 :target target))))
 
 (defmethod convert-distance ((obj1 kilometer) target)
   (cond
@@ -35,4 +36,4 @@
     ((or (eq target :meter) (eq target :m))
      (make-meter (* (val obj1) 1000)))
 
-    (t (error "Can't convert ~A to ~A~%" obj1 target))))
+    (t (error 'incompatible-unit :src obj1 :target target))))

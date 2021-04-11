@@ -248,3 +248,7 @@
 (deftest test-kilometer-convert-centimeter-3
   (testing "should (= 50000 (val (convert (make-kilometer 1) :to :cm))) to be true"
     (ok (cl:= 50000 (cl-unit.distance:val (cl-unit:convert (cl-unit.distance:make-kilometer 0.5) :to :cm))))))
+
+(deftest test-kilometer-convert-kilometer-1
+  (testing "should (signals (convert (make-kilometer 1) :to :m)) to be true"
+    (ok (signals (cl-unit:convert (cl-unit.distance:make-kilometer 1) :to :km)))))

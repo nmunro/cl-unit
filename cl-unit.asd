@@ -5,7 +5,8 @@
   :depends-on ()
   :components ((:module "src"
                 :components
-                ((:module "utils"
+                ((:file "errors")
+                 (:module "utils"
                   :components
                   ((:file "utils")))
                  (:module "distance"
