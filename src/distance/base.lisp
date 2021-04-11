@@ -18,7 +18,7 @@
 
 (defmethod print-object ((object distance) stream)
   (print-unreadable-object (object stream)
-    (format stream "Distance: ~A ~A(s)" (val object) (name object))))
+    (format stream "~A ~A~p" (val object) (string-downcase (name object)) (val object))))
 
 (defmacro define-distance (name &optional (base nil))
   "Creates a custom distance unit"
