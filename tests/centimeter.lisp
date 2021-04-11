@@ -236,3 +236,30 @@
 (deftest test-centimeter/kilometer-2
   (testing "should (= 1/100000 (val (/ (make-centimeter 2) (make-kilometer 2)))) to be true"
     (ok (cl:= 1/100000 (cl-unit.distance:val (cl-unit:/ (cl-unit.distance:make-centimeter 2) (cl-unit.distance:make-kilometer 2)))))))
+(deftest test-meter-convert-centimeter-1
+  (testing "should (= 100 (val (convert (make-kilometer 1) :meter))) to be true"
+    (ok (cl:= 100 (cl-unit.distance:val (cl-unit:convert (cl-unit.distance:make-meter 1) :to :centimeter))))))
+
+(deftest test-centimeter-convert-meter-1
+  (testing "should (= 1/100 (val (convert (make-centimeter 1) :to :meter))) to be true"
+    (ok (cl:= 1/100 (cl-unit.distance:val (cl-unit:convert (cl-unit.distance:make-centimeter 1) :to :meter))))))
+
+(deftest test-centimeter-convert-meter-2
+  (testing "should (= 1/100 (val (convert (make-kilometer 1) :to :meter))) to be true"
+    (ok (cl:= 1/100 (cl-unit.distance:val (cl-unit:convert (cl-unit.distance:make-centimeter 1) :to :m))))))
+
+(deftest test-centimeter-convert-meter-3
+  (testing "should (= 0.005 (val (convert (make-kilometer 1) :to :meter))) to be true"
+    (ok (cl:= 0.005 (cl-unit.distance:val (cl-unit:convert (cl-unit.distance:make-centimeter 0.5) :to :m))))))
+
+(deftest test-centimeter-convert-kilometer-1
+  (testing "should (= 1/100000 (val (convert (make-centimeter 1) :to :kilometer))) to be true"
+    (ok (cl:= 1/100000 (cl-unit.distance:val (cl-unit:convert (cl-unit.distance:make-centimeter 1) :to :kilometer))))))
+
+(deftest test-centimeter-convert-kilometer-2
+  (testing "should (= 1/100000 (val (convert (make-kilometer 1) :to :km))) to be true"
+    (ok (cl:= 1/100000 (cl-unit.distance:val (cl-unit:convert (cl-unit.distance:make-centimeter 1) :to :km))))))
+
+(deftest test-centimeter-convert-kilometer-3
+  (testing "should (=  0.000005 (val (convert (make-kilometer 1) :to :km))) to be true"
+    (ok (cl:= 0.000005 (cl-unit.distance:val (cl-unit:convert (cl-unit.distance:make-centimeter 0.5) :to :km))))))
